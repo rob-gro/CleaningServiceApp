@@ -1,11 +1,13 @@
 package dev.robgro.cleaningserviceapp.client;
 
 import dev.robgro.cleaningserviceapp.house.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.*;
 
 @Entity
+@Transactional
 @Table(name = "clients")
 public class Client {
 
