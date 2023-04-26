@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+
+  <!--    added bootstrap  -->
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+
+  <title>Clients</title>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0ZVDQLPXV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q0ZVDQLPXV');
+</script>
+<body class="bg-dark">
+<div class="container my-auto mx-auto">
+  <div><h1 class="text-secondary align-content-center">List of Clients</h1></div>
+  <hr class="bg-warning">
+
+  <div class="container my-1">
+    <a th:href="@{/index}" class="btn btn-outline-warning justify-content-md-end">Back to Main</a>
+    <a th:href="@{/clients/new}" class="btn btn-outline-warning">Create New Client</a>
+  </div>
+  <br>
+
+  <div>
+    <table th:border="4" th:cellpadding="10" class="table table-bordered text-center table-dark table-striped text-nowrap">
+
+      <thead class="col-form-label text-warning">
+      <th>Client's Name</th>
+      <th>Phone No.</th>
+      <th>Email</th>
+      <th>Actions</th>
+      </thead>
+
+      <tbody class="text-light">
+      <th:block th:each="client : ${clientsList}">
+        <tr>
+          <td>[[${#strings.concat(client.firstName) + ' ' + (client.lastName)}]]</td>
+          <td th:text="${client.phoneNumber}"></td>
+          <td th:text="${client.email}"></td>
+          <td>
+            <a th:href="@{'/clients/' + ${client.id} + '/housesList'}"
+               class="btn btn-outline-info btn-sm"> Houses </a>
+
+            <a th:href="@{'/clients/' + ${client.id} + '/edit'}"
+               class="btn btn-outline-warning btn-sm"> Edit </a>
+            &nbsp;
+            <a th:href="@{'/clients/' + ${client.id} + '/delete'}"
+               class="btn btn-outline-danger btn-sm"> Delete </a>
+          </td>
+        </tr>
+      </th:block>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>

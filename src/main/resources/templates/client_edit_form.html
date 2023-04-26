@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+
+  <!--    added bootstrap  -->
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+
+  <title>Client Form</title>
+</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0ZVDQLPXV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q0ZVDQLPXV');
+</script>
+
+<body class="bg-dark">
+<div class="container my-3">
+  <div><h1 class="text-secondary align-content-center">Edit Client's Details</h1></div>
+  <hr class="bg-warning">
+
+  <div class="container my-1">
+    <a th:href="@{/}" class="btn btn-outline-warning">Back to Main</a>
+    <a th:href="@{/clients}" class="btn btn-outline-warning">List Of Clients</a>
+  </div>
+
+  <form th:action="@{/clients/save}" th:object="${client}" method="post"
+        style="max-width: 600px; margin: 0 auto;">
+
+    <div class="m-12">
+
+      <div class="form-group row">
+        <label class="col-form-label col-sm-4 text-warning">Client's Id</label>
+        <div class="col-sm-8">
+          <input type="text" readonly class="form-control-plaintext text-warning" id="clientId" th:field="*{id}" th:value="${client.id}"/>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group row">
+        <label class="col-form-label col-sm-4 text-warning">Client's First Name</label>
+        <div class="col-sm-8">
+          <input type="text" th:field="*{firstName}" class="form-control" required>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group row">
+        <label class="col-form-label col-sm-4 text-warning">Client's Last Name</label>
+        <div class="col-sm-8">
+          <input type="text" th:field="*{lastName}" class="form-control" required>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group row">
+        <label class="col-form-label col-sm-4 text-warning">Phone No.</label>
+        <div class="col-sm-8">
+          <input type="text" th:field="*{phoneNumber}" class="form-control" required>
+        </div>
+      </div>
+      <br>
+
+      <div class="form-group row">
+        <label class="col-form-label col-sm-4 text-warning">Email</label>
+        <div class="col-sm-8">
+          <input type="text" th:field="*{email}" class="form-control" required>
+        </div>
+      </div>
+      <br>
+
+      <div class="text-center p-3">
+        <button type="submit" class="btn btn-outline-info">Save</button>
+      </div>
+    </div>
+
+  </form>
+</div>
+</body>
+</html>
