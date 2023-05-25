@@ -1,8 +1,9 @@
 package dev.robgro.cleaningserviceapp.house;
 
-import dev.robgro.cleaningserviceapp.client.*;
+import dev.robgro.cleaningserviceapp.client.Client;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Entity
 @Table(name = "houses")
@@ -13,7 +14,7 @@ public class House {
     private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "client_id")
+    @JoinColumn(name = "client_id", referencedColumnName = "id")
     private Client client;
 
     @Column(name = "street_number")
@@ -47,8 +48,7 @@ public class House {
                 ", streetNumber='" + streetNumber + '\'' +
                 ", streetName='" + streetName + '\'' +
                 ", postCode='" + postCode + '\'' +
-                ", city='" + city + '\'' +
-                '}';
+                ", city='" + city + '\'' + '}';
     }
 
     @Override
@@ -85,7 +85,7 @@ public class House {
         this.id = id;
     }
 
-    public Client getClient() {
+    public Client getClient(Optional<Client> byId) {
         return client;
     }
 
