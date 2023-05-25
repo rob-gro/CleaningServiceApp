@@ -27,7 +27,7 @@ public class Client {
     @Column(name = "phone", unique = true, nullable = false)
     private String phoneNumber;
 
-    @Column(name = "email", unique = true, nullable = false)
+    @Column(name = "email", nullable = false)
     private String email;
 
     public Client(List<House> houses, Long id, String firstName, String lastName, String phoneNumber, String email) {
