@@ -3,6 +3,7 @@ package dev.robgro.cleaningserviceapp.client;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -25,8 +26,9 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public Optional<Client> getClientById(Long id) {
-        return clientRepository.findById(id);
+    public Client getClientById(Long id) {
+        Optional<Client> clientOptional = clientRepository.findById(id);
+        return clientOptional.orElseThrow(() -> new NoSuchElementException("Client not found with ID: " + id));
     }
 
     @Override

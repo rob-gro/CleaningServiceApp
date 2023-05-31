@@ -2,10 +2,7 @@ package dev.robgro.cleaningserviceapp.client;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class ClientController {
@@ -16,11 +13,19 @@ public class ClientController {
         this.clientService = clientService;
     }
 
+    @GetMapping("/clients/new")
+    public String newClient(Model model) {
+        model.addAttribute("client", new Client());
+        return "client_new_form";
+    }
+
     @GetMapping({"/clients","/clients.html"})
     public String clientsList(Model model) {
         model.addAttribute("clientsList", clientService.getAllClients());
         return "clients";
     }
+
+    //todo Client DTO
 
     @PostMapping("/clients/save")
     public String saveClient(@ModelAttribute("clients") Client client) {
