@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!--    added bootstrap  -->
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css" />
+
+  <title>Cleaning Services Application</title>
+
+  <link rel="stylesheet" href="/css/style.css"/>
+
+</head>
+<body>
+
+<div class="d-md-grid gap-2 col-md-5 mx-auto container-fluid text-center">
+  <h1>Cleaning Services Application</h1>
+
+  <div class="container my-1">
+    <button type="button" class="nav-button" onclick="window.location.href='/clients';">List Of Clients</button>
+    <button type="button" class="nav-button" onclick="window.location.href='/houses';">List of Houses</button>
+  </div>
+
+</div>
+</body>
+</html>
