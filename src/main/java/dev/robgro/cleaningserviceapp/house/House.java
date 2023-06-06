@@ -3,7 +3,6 @@ package dev.robgro.cleaningserviceapp.house;
 import dev.robgro.cleaningserviceapp.client.Client;
 
 import javax.persistence.*;
-import java.util.Optional;
 
 @Entity
 @Table(name = "houses")
@@ -85,7 +84,7 @@ public class House {
         this.id = id;
     }
 
-    public Client getClient(Optional<Client> byId) {
+    public Client getClient() {
         return client;
     }
 
