@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <!--    added bootstrap  -->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+
+    <title>House's Form</title>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0ZVDQLPXV"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q0ZVDQLPXV');
+</script>
+
+<body>
+<div class="container my-3">
+    <div><h1>Edit House's Details</h1></div>
+
+    <div class="container my-1">
+        <button type="button" class="nav-button" onclick="window.location.href='/index';">Back to Main Page</button>
+        <button type="button" class="nav-button" onclick="window.location.href='/clients';">Back to Clients List
+        </button>
+    </div>
+
+    <form th:action="@{/houses/save}" th:object="${house}" method="post"
+          style="max-width: 600px; margin: 0 auto;">
+
+        <!--  below verse is a protection against "add" to DB instead of "edit" -->
+        <input type="hidden" th:field="*{id}" th:value="${house.id}"/>
+        <input type="hidden" th:field="*{client.id}" th:value="${house.client.id}">
+
+        <div class="m-12">
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 text-warning">Client's First Name</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{client.firstName}" class="form-control" required>
+
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 text-warning">Client's Last Name</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{client.lastName}" class="form-control" required>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 text-warning">Client's Phone no.</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{client.phoneNumber}" class="form-control" required>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 text-warning">Client's Email</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{client.email}" class="form-control" required>
+                </div>
+            </div>
+            <br>
+
+            <hr class="bg-warning">
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 text-warning">Street Number</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{streetNumber}" class="form-control" required>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 text-warning">Street Name</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{streetName}" class="form-control" required>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 text-warning">Post Code</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{postCode}" class="form-control" required>
+                </div>
+            </div>
+            <br>
+
+            <div class="form-group row">
+                <label class="col-form-label col-sm-4 text-warning">City</label>
+                <div class="col-sm-8">
+                    <input type="text" th:field="*{city}" class="form-control" required>
+                </div>
+            </div>
+            <br>
+
+            <div class="text-center p-3">
+                <button type="submit" class="btn btn-outline-info">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
