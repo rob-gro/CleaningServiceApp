@@ -11,9 +11,6 @@ import java.util.*;
 @Table(name = "clients")
 public class Client {
 
-    @OneToMany(mappedBy = "client")
-    List<House> houses;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -29,6 +26,9 @@ public class Client {
 
     @Column(name = "email", nullable = false)
     private String email;
+
+    @OneToMany(mappedBy = "client")
+    List<House> houses;
 
     public Client(List<House> houses, Long id, String firstName, String lastName, String phoneNumber, String email) {
         this.houses = houses;

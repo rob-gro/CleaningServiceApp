@@ -1,5 +1,6 @@
 package dev.robgro.cleaningserviceapp.client;
 
+import dev.robgro.cleaningserviceapp.house.House;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,6 +34,17 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public void deleteClientById(Long id) {
-        clientRepository.deleteById(id);
+
+        Client client = getClientById(id);
+
+        if (client != null) {
+            List<House> clientHouses = client.getHouses();
+            if (clientHouses != null) {
+                for (House house : clientHouses) {
+                    house.setClient(null);
+                }
+            }
+            clientRepository.delete(client);
+        }
     }
 }
