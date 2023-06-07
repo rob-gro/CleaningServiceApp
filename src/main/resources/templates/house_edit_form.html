@@ -20,7 +20,6 @@
     }
 
     gtag('js', new Date());
-
     gtag('config', 'G-Q0ZVDQLPXV');
 </script>
 
@@ -30,8 +29,7 @@
 
     <div class="container my-1">
         <button type="button" class="nav-button" onclick="window.location.href='/index';">Back to Main Page</button>
-        <button type="button" class="nav-button" onclick="window.location.href='/clients';">Back to Clients List
-        </button>
+        <button type="button" class="nav-button" onclick="window.location.href='/houses';">Back to Houses List</button>
     </div>
 
     <form th:action="@{/houses/save}" th:object="${house}" method="post"
