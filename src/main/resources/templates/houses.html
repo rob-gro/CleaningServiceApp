@@ -13,9 +13,11 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0ZVDQLPXV"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
+
     function gtag() {
         dataLayer.push(arguments);
     }
+
     gtag('js', new Date());
     gtag('config', 'G-Q0ZVDQLPXV');
 </script>
@@ -28,6 +30,9 @@
     <div class="container my-1">
         <button type="button" class="nav-button" onclick="window.location.href='/index';">Back to Main Page</button>
         <button type="button" class="nav-button" onclick="window.location.href='/houses/new';">Create New House</button>
+        <button type="button" class="nav-button" onclick="window.location.href='/changes';">Changes within existing
+            files
+        </button>
     </div>
 
     <div>
@@ -49,7 +54,11 @@
                     <td th:text="${house.streetName}"></td>
                     <td th:text="${house.postCode}"></td>
                     <td th:text="${house.city}"></td>
-                    <td th:text="${#strings.concat(house.client.firstName) + ' ' + (house.client.lastName)}"></td>
+                    <td>
+                        <span th:if="${house.client?.firstName != null}"
+                              th:text="${#strings.concat(house.client.firstName) + ' ' + (house.client.lastName)}"></span>
+                        <span th:unless="${house.client != null}">No Client's Data</span>
+                    </td>
 
                     <td>
                         <a th:href="@{'/houses/' + ${house.id} + '/edit'}"
