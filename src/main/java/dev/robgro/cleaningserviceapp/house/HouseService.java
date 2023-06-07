@@ -13,4 +13,6 @@ public interface HouseService {
     void deleteHouseById(Long id);
 
     List<House> clientHousesList(Long clientId);
+
+    void removeClientFromHouse(Long id);
 }

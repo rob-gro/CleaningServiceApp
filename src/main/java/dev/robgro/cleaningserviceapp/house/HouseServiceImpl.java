@@ -49,4 +49,13 @@ public class HouseServiceImpl implements HouseService {
     public List<House> clientHousesList(Long clientId) {
         return houseRepository.findByClientId(clientId);
     }
+
+    @Override
+    public void removeClientFromHouse(Long id) {
+        House house = getHouseById(id);
+        if (house != null) {
+            house.setClient(null);
+            houseRepository.save(house);
+        }
+    }
 }

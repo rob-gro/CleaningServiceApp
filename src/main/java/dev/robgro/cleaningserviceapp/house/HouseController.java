@@ -54,7 +54,7 @@ public class HouseController {
     }
 
     @GetMapping("/clients/{clientId}/housesList")
-    public String getClientHousesList(@PathVariable ("clientId")Long clientId, Model model) {
+    public String getClientHousesList(@PathVariable("clientId") Long clientId, Model model) {
         model.addAttribute("clientHousesList", houseService.clientHousesList(clientId));
         model.addAttribute("client", clientService.getClientById(clientId));
         return "client_houses_list";
@@ -65,5 +65,11 @@ public class HouseController {
         model.addAttribute("housesList", houseService.getAllHouses());
         model.addAttribute("clientsList", clientService.getAllClients());
         return "changes";
+    }
+
+    @GetMapping("/clients/remove/{id}")
+    public String removeClientFromHouse(@PathVariable("id") Long id) {
+        houseService.removeClientFromHouse(id);
+        return "redirect:/houses";
     }
 }

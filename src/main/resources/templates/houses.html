@@ -57,13 +57,31 @@
                     <td>
                         <span th:if="${house.client?.firstName != null}"
                               th:text="${#strings.concat(house.client.firstName) + ' ' + (house.client.lastName)}"></span>
-                        <span th:unless="${house.client != null}">No Client's Data</span>
+                        <span th:unless="${house.client != null}"> - - - </span>
                     </td>
 
                     <td>
+                        <a th:href="@{'/clients/remove/' + ${house.id}}"
+                           class="btn btn-outline-info btn-sm"
+                           th:if="${house.client != null}"
+                           th:text="Remove">Remove</a>
+
+                        <button type="button" class="btn btn-outline-info btn-sm"
+                                th:unless="${house.client != null}"
+                                disabled="disabled">Remove
+                        </button>
+
                         <a th:href="@{'/houses/' + ${house.id} + '/edit'}"
-                           class="btn btn-outline-warning btn-sm"> Edit </a>
-                        &nbsp;
+                           class="btn btn-outline-warning btn-sm"
+
+                           th:if="${house.client != null}"
+                           th:text="Edit">Edit</a>
+
+                        <button type="button" class="btn btn-outline-warning btn-sm"
+                                th:unless="${house.client != null}"
+                                disabled="disabled">Edit
+                        </button>
+
                         <a th:href="@{'/houses/' + ${house.id} + '/delete'}"
                            class="btn btn-outline-danger btn-sm"> Delete </a>
                     </td>

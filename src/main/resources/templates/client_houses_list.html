@@ -43,11 +43,14 @@
                     <td th:text="${house.streetNumber} + ' ' + ${house.streetName}"></td>
                     <td th:text="${house.postCode} + ', ' + ${house.city}"></td>
                     <td>
+                        <a th:href="@{'/clients/remove/' + ${house.id}}"
+                           class="btn btn-outline-info btn-sm"> Remove Client </a>
+
                         <a th:href="@{'/houses/' + ${house.id} + '/edit'}"
-                           class="btn btn-outline-warning btn-sm"> Edit </a>
+                           class="btn btn-outline-warning btn-sm"> Edit House </a>
 
                         <a th:href="@{'/houses/' + ${house.id} + '/delete'}"
-                           class="btn btn-outline-danger btn-sm"> Delete </a>
+                           class="btn btn-outline-danger btn-sm"> Delete House </a>
                     </td>
                 </tr>
             </th:block>
