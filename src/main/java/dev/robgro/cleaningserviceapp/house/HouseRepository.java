@@ -6,5 +6,5 @@ import java.util.*;
 
 public interface HouseRepository extends JpaRepository<House, Long> {
 
-    List<House> findByClientId(Long client_id);
+    List<House> findByClientId(Long clientId);
 }
