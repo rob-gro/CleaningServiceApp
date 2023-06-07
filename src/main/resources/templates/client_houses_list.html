@@ -21,7 +21,7 @@
 
 <body>
 <div class="container my-3">
-    <div><h1 th:text="'Houses of ' + ${client.firstName} + ' ' + ${client.lastName}">Hello</h1></div>
+    <div><h1 th:text="'Houses of ' + ${#strings.concat(client.firstName) + ' ' + (client.lastName)}">Hello</h1></div>
 
     <div class="container my-1">
         <button type="button" class="nav-button" onclick="window.location.href='/index';">Back to Main Page</button>
@@ -38,15 +38,15 @@
             </thead>
 
             <tbody class="text-light">
-            <th:block th:each="clientHousesList : ${clientHousesList}">
+            <th:block th:each="house : ${clientHousesList}">
                 <tr>
-                    <td th:text="${clientHousesList.streetNumber} + ' ' + ${clientHousesList.streetName}"></td>
-                    <td th:text="${clientHousesList.postCode} + ', ' + ${clientHousesList.city}"></td>
+                    <td th:text="${house.streetNumber} + ' ' + ${house.streetName}"></td>
+                    <td th:text="${house.postCode} + ', ' + ${house.city}"></td>
                     <td>
-                        <a th:href="@{'/houses/' + ${id} + '/edit'}"
+                        <a th:href="@{'/houses/' + ${house.id} + '/edit'}"
                            class="btn btn-outline-warning btn-sm"> Edit </a>
 
-                        <a th:href="@{'/houses/' + ${id} + '/delete'}"
+                        <a th:href="@{'/houses/' + ${house.id} + '/delete'}"
                            class="btn btn-outline-danger btn-sm"> Delete </a>
                     </td>
                 </tr>
