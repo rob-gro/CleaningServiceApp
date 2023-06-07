@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+
+    <!--    added bootstrap  -->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" type="text/css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+
+    <title>Choose Client</title>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0ZVDQLPXV"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-Q0ZVDQLPXV');
+</script>
+
+
+<body>
+
+<div class="container my-3">
+    <div><h1 class="text-secondary align-content-center">Existing Clients</h1></div>
+
+    <div class="container my-1">
+        <button type="button" class="nav-button" onclick="window.location.href='/index';">Back to Main Page</button>
+        <button type="button" class="nav-button" onclick="window.location.href='/houses';">List Of Houses</button>
+    </div>
+</div>
+
+<form action="/houses/save" method="post" style="max-width: 600px; margin: 0 auto;">
+
+    <div class="m-12">
+        <div>
+            <label class="col-form-label col-sm-8 text-warning" for="house">House address :</label>
+            <div class="col-sm-8">
+                <select class="form-select bg-dark border-warning text-warning" id="house" name="house">
+                    <option th:each="house : ${housesList}" th:value="${house.id}"
+                            th:text="${#strings.concat(house.streetNumber) + ', ' + (house.streetName) + ', ' + (house.city)}"></option>
+                </select>
+            </div>
+        </div>
+<br>
+
+        <div class="form-group row">
+            <label class="col-form-label col-sm-8 text-warning" for="client">Client name :</label>
+            <div class="col-sm-8">
+            <select class="form-select bg-dark border-warning text-warning" id="client" name="client">
+                <option th:each="client : ${clientsList}" th:value="${client.id}"
+                        th:text="${#strings.concat(client.firstName) + ' ' + (client.lastName)}"></option>
+            </select>
+            </div>
+        </div>
+
+        <div class="text-center p-3">
+            <button type="submit" class="btn btn-outline-info">Save</button>
+        </div>
+    </div>
+</form>
+
+
+</body>
+</html>
