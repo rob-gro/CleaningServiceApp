@@ -1,8 +1,8 @@
 package dev.robgro.cleaningserviceapp.house;
 
 import dev.robgro.cleaningserviceapp.client.ClientService;
-import org.springframework.stereotype.*;
-import org.springframework.ui.*;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
@@ -39,6 +39,8 @@ public class HouseController {
         return "house_edit_form";
     }
 
+    //todo Client DTO
+
     @PostMapping("/houses/save")
     public String saveHouse(@ModelAttribute House house) {
         houseService.saveHouse(house);
@@ -51,12 +53,17 @@ public class HouseController {
         return "redirect:/houses";
     }
 
-    @GetMapping("/clients/{id}/housesList")
-    public String clientHousesList(@PathVariable ("id")Long id, Model model) {
-        model.addAttribute("clientHousesList", houseService.clientHousesList(id));
-        model.addAttribute("client", clientService.getClientById(id));
+    @GetMapping("/clients/{clientId}/housesList")
+    public String getClientHousesList(@PathVariable ("clientId")Long clientId, Model model) {
+        model.addAttribute("clientHousesList", houseService.clientHousesList(clientId));
+        model.addAttribute("client", clientService.getClientById(clientId));
         return "client_houses_list";
     }
 
-
+    @GetMapping("/changes")
+    public String chooseClient(Model model) {
+        model.addAttribute("housesList", houseService.getAllHouses());
+        model.addAttribute("clientsList", clientService.getAllClients());
+        return "changes";
+    }
 }
