@@ -1,6 +1,4 @@
-package dev.robgro.cleaningserviceapp.house;
-
-import dev.robgro.cleaningserviceapp.client.Client;
+package dev.robgro.cleaningserviceapp.model;
 
 import javax.persistence.*;
 

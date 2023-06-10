@@ -1,6 +1,8 @@
-package dev.robgro.cleaningserviceapp.client;
+package dev.robgro.cleaningserviceapp.service;
 
-import dev.robgro.cleaningserviceapp.house.House;
+import dev.robgro.cleaningserviceapp.model.Client;
+import dev.robgro.cleaningserviceapp.model.House;
+import dev.robgro.cleaningserviceapp.repository.ClientRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

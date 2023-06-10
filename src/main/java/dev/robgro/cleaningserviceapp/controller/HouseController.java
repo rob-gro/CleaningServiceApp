@@ -1,6 +1,8 @@
-package dev.robgro.cleaningserviceapp.house;
+package dev.robgro.cleaningserviceapp.controller;
 
-import dev.robgro.cleaningserviceapp.client.ClientService;
+import dev.robgro.cleaningserviceapp.service.ClientService;
+import dev.robgro.cleaningserviceapp.model.House;
+import dev.robgro.cleaningserviceapp.service.HouseService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -39,7 +41,7 @@ public class HouseController {
         return "house_edit_form";
     }
 
-    //todo Client DTO
+    //todo House DTO
 
     @PostMapping("/houses/save")
     public String saveHouse(@ModelAttribute House house) {

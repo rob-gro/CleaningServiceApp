@@ -1,4 +1,6 @@
-package dev.robgro.cleaningserviceapp.house;
+package dev.robgro.cleaningserviceapp.service;
+
+import dev.robgro.cleaningserviceapp.model.House;
 
 import java.util.*;
 

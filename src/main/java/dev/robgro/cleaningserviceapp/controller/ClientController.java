@@ -1,5 +1,7 @@
-package dev.robgro.cleaningserviceapp.client;
+package dev.robgro.cleaningserviceapp.controller;
 
+import dev.robgro.cleaningserviceapp.model.Client;
+import dev.robgro.cleaningserviceapp.service.ClientService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;

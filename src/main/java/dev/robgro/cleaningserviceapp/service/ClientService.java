@@ -1,4 +1,6 @@
-package dev.robgro.cleaningserviceapp.client;
+package dev.robgro.cleaningserviceapp.service;
+
+import dev.robgro.cleaningserviceapp.model.Client;
 
 import java.util.List;
 

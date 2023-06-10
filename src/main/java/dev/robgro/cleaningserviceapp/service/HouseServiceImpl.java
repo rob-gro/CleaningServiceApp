@@ -1,6 +1,8 @@
-package dev.robgro.cleaningserviceapp.house;
+package dev.robgro.cleaningserviceapp.service;
 
-import dev.robgro.cleaningserviceapp.client.Client;
+import dev.robgro.cleaningserviceapp.model.Client;
+import dev.robgro.cleaningserviceapp.model.House;
+import dev.robgro.cleaningserviceapp.repository.HouseRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +24,7 @@ public class HouseServiceImpl implements HouseService {
     }
 
     @Override
-    public House saveHouse(House house) {
+      public House saveHouse(House house) {
         return houseRepository.save(house);
     }
 

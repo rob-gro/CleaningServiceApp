@@ -1,5 +1,6 @@
-package dev.robgro.cleaningserviceapp.house;
+package dev.robgro.cleaningserviceapp.repository;
 
+import dev.robgro.cleaningserviceapp.model.House;
 import org.springframework.data.jpa.repository.*;
 
 import java.util.*;
