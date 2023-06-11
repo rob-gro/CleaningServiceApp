@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/style.css"/>
 
     <title>Client's Houses</title>
+    <link rel="icon" href="/rg.ico">
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -36,7 +37,6 @@
             <th>Post code, city</th>
             <th>Actions</th>
             </thead>
-
             <tbody class="text-light">
             <th:block th:each="house : ${clientHousesList}">
                 <tr>
@@ -44,7 +44,7 @@
                     <td th:text="${house.postCode} + ', ' + ${house.city}"></td>
                     <td>
                         <a th:href="@{'/clients/remove/' + ${house.id}}"
-                           class="btn btn-outline-info btn-sm"> Remove Client </a>
+                           class="btn btn-outline-info btn-sm"> Sell House </a>
 
                         <a th:href="@{'/houses/' + ${house.id} + '/edit'}"
                            class="btn btn-outline-warning btn-sm"> Edit House </a>
