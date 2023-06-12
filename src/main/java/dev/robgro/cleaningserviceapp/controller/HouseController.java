@@ -18,9 +18,9 @@ public class HouseController {
         this.clientService = clientService;
     }
 
-    @RequestMapping({"", "/", "/index"})
+    @RequestMapping({"", "/", "/start"})
     public String homePage() {
-        return "index";
+        return "start";
     }
 
     @GetMapping({"/houses", "/houses.html"})
