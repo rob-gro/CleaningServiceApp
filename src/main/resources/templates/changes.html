@@ -31,9 +31,16 @@
 <h5>You can swap here between existing Clients and Houses</h5>
 
     <div class="container my-1">
-        <button type="button" class="nav-button" onclick="window.location.href='/index';">Back to Main Page</button>
+        <button type="button" class="nav-button" onclick="window.location.href='/start';">Back to Main Page</button>
         <button type="button" class="nav-button" onclick="window.location.href='/clients';">List Of Clients</button>
         <button type="button" class="nav-button" onclick="window.location.href='/houses';">List Of Houses</button>
+        <button type="button" class="del-button" id="exit-button">Exit app</button>
+
+        <script>
+            document.getElementById("exit-button").addEventListener("click", function() {
+                window.location.href = "https://robgro.dev";
+            });
+        </script>
     </div>
 </div>
 

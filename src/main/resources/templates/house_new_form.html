@@ -30,8 +30,15 @@
     <div><h1 class="text-secondary align-content-center">Provide details of the new house</h1></div>
 
     <div class="container my-1">
-        <button type="button" class="nav-button" onclick="window.location.href='/index';">Back to Main Page</button>
+        <button type="button" class="nav-button" onclick="window.location.href='/start';">Back to Main Page</button>
         <button type="button" class="nav-button" onclick="window.location.href='/houses';">List Of Houses</button>
+        <button type="button" class="del-button" id="exit-button">Exit app</button>
+
+        <script>
+            document.getElementById("exit-button").addEventListener("click", function() {
+                window.location.href = "https://robgro.dev";
+            });
+        </script>
     </div>
 
     <form th:action="@{/houses/save}" th:object="${house}" method="post"
