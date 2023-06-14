@@ -18,10 +18,10 @@ public class Client {
     @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "phone", unique = true, nullable = false)
+    @Column(name = "phone", nullable = false)
     private String phoneNumber;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", unique = true, nullable = false)
     private String email;
 
     @OneToMany(mappedBy = "client")

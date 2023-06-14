@@ -32,12 +32,6 @@
         <button type="button" class="nav-button" onclick="window.location.href='/start';">Back to Main Page</button>
         <button type="button" class="nav-button" onclick="window.location.href='/clients';">List Of Clients</button>
         <button type="button" class="exit-button" id="exit-button">Exit app</button>
-
-        <script>
-            document.getElementById("exit-button").addEventListener("click", function() {
-                window.location.href = "https://robgro.dev";
-            });
-        </script>
     </div>
 
     <form th:action="@{/clients/save}" th:object="${client}" method="post"
@@ -93,5 +87,11 @@
 
     </form>
 </div>
+
+<script>
+    document.getElementById("exit-button").addEventListener("click", function () {
+        window.location.href = "https://robgro.dev";
+    });
+</script>
 </body>
 </html>
