@@ -29,7 +29,7 @@
     <div><h1 class="text-secondary align-content-center">Provide details of the new client</h1></div>
 
     <div class="container my-1">
-        <button type="button" class="nav-button" onclick="window.location.href='/start';">Back to Main Page</button>
+        <button type="button" class="nav-button" onclick="window.location.href='/index';">Back to Main Page</button>
         <button type="button" class="nav-button" onclick="window.location.href='/clients';">List Of Clients</button>
         <button type="button" class="exit-button" id="exit-button">Exit app</button>
     </div>
@@ -73,7 +73,7 @@
             <br>
 
             <div class="form-group row">
-                <label class="col-form-label col-sm-4 text-warning">Email</label>
+                <label class="col-form-label col-sm-4 text-warning">Email (must be unique)</label>
                 <div class="col-sm-8">
                     <input type="text" th:field="*{email}" class="form-control" required>
                 </div>

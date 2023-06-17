@@ -30,16 +30,10 @@
     <h1>List of Clients</h1>
 
     <div class="container my-1">
-        <button type="button" class="nav-button" onclick="window.location.href='/start';">Back to Main Page</button>
+        <button type="button" class="nav-button" onclick="window.location.href='/index';">Back to Main Page</button>
         <button type="button" class="nav-button" onclick="window.location.href='/clients/new';">Create New Client</button>
         <button type="button" class="nav-button" onclick="window.location.href='/changes';">Changes within existing files</button>
         <button type="button" class="exit-button" id="exit-button">Exit app</button>
-
-        <script>
-            document.getElementById("exit-button").addEventListener("click", function() {
-                window.location.href = "https://robgro.dev";
-            });
-        </script>
     </div>
 
     <div>
@@ -75,5 +69,10 @@
         </table>
     </div>
 </div>
+<script>
+    document.getElementById("exit-button").addEventListener("click", function() {
+        window.location.href = "https://robgro.dev";
+    });
+</script>
 </body>
 </html>

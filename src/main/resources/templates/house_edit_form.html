@@ -29,15 +29,9 @@
     <div><h1>Edit House's Details</h1></div>
 
     <div class="container my-1">
-        <button type="button" class="nav-button" onclick="window.location.href='/start';">Back to Main Page</button>
+        <button type="button" class="nav-button" onclick="window.location.href='/index';">Back to Main Page</button>
         <button type="button" class="nav-button" onclick="window.location.href='/houses';">Back to Houses List</button>
         <button type="button" class="exit-button" id="exit-button">Exit app</button>
-
-        <script>
-            document.getElementById("exit-button").addEventListener("click", function() {
-                window.location.href = "https://robgro.dev";
-            });
-        </script>
     </div>
 
     <form th:action="@{/houses/save}" th:object="${house}" method="post"
@@ -122,5 +116,10 @@
         </div>
     </form>
 </div>
+<script>
+    document.getElementById("exit-button").addEventListener("click", function() {
+        window.location.href = "https://robgro.dev";
+    });
+</script>
 </body>
 </html>

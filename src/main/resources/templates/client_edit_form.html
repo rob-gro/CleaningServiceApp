@@ -30,15 +30,10 @@
     <div><h1>Edit Client's Details</h1></div>
 
     <div class="container my-1">
-        <button type="button" class="nav-button" onclick="window.location.href='/start';">Back to Main Page</button>
+        <button type="button" class="nav-button" onclick="window.location.href='/index';">Back to Main Page</button>
         <button type="button" class="nav-button" onclick="window.location.href='/clients';">Back to Clients List
-            <button type="button" class="exit-button" id="exit-button">Exit app</button>
-
-            <script>
-                document.getElementById("exit-button").addEventListener("click", function() {
-                    window.location.href = "https://robgro.dev";
-                });
-            </script>
+        </button>
+        <button type="button" class="exit-button" id="exit-button">Exit app</button>
     </div>
 
     <form th:action="@{/clients/save}" th:object="${client}" method="post"
@@ -80,7 +75,7 @@
             <br>
 
             <div class="form-group row">
-                <label class="col-form-label col-sm-4 text-warning">Email</label>
+                <label class="col-form-label col-sm-4 text-warning">Email (must be unique)</label>
                 <div class="col-sm-8">
                     <input type="text" th:field="*{email}" class="form-control" required>
                 </div>
@@ -94,5 +89,10 @@
 
     </form>
 </div>
+<script>
+    document.getElementById("exit-button").addEventListener("click", function () {
+        window.location.href = "https://robgro.dev";
+    });
+</script>
 </body>
 </html>
