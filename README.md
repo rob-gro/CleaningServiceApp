@@ -69,4 +69,4 @@ To do:
 Created by [@robgrodev](https://robgro.dev/) - feel free to contact me!
 
 ## License 
- This project is open source and available under the MIT Licence
+ This project is open source and available under the MIT License
