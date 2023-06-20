@@ -48,6 +48,15 @@ In addition to the typical CRUD (Create, Read, Update, Delete) functions, you ca
 
 
 ## Screenshots
+
+<p align="center">
+  <img src="photo/edit.png" width="150" title="hover text">
+  <img src="photo/edit.png" width="200" alt="accessibility text">
+</p>
+
+![](photo/del2.png)
+![](photo/edit.png)
+![](photo/info.png)
 ![Example screenshot](./img/screenshot.png)
 <!-- If you have screenshots you'd like to share, include them here. -->
 
