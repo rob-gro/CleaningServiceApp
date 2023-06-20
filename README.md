@@ -32,8 +32,8 @@ Application helps manage information about locations of houses, their owners and
 	
 ## Technologies
 Project is created with:
-* Java version: 17
-* SpringBoot version: 2.7.8
+* Java 17
+* SpringBoot
 * MySql
 * Hibernate
 * Heroku
@@ -48,18 +48,12 @@ In addition to the typical CRUD (Create, Read, Update, Delete) functions, you ca
 
 
 ## Screenshots
-
 <p align="center">
-  <img src="photo/edit.png" width="150" title="hover text">
-  <img src="photo/edit.png" width="200" alt="accessibility text">
+  <img src="readme-img/git1.png" width="auto">
+	<img src="readme-img/git2.png" width="auto">
+	 <img src="readme-img/git3.png" width="auto">
+	 <img src="readme-img/git4.png" width="auto">
 </p>
-
-![](photo/del2.png)
-![](photo/edit.png)
-![](photo/info.png)
-![Example screenshot](./img/screenshot.png)
-<!-- If you have screenshots you'd like to share, include them here. -->
-
 
 ## Usage
 - You can see working code on my website [_here_](https://robgro.dev)
@@ -74,6 +68,5 @@ To do:
 ## Contact
 Created by [@robgrodev](https://robgro.dev/) - feel free to contact me!
 
-<!-- Optional -->
 ## License 
  This project is open source and available under the MIT Licence
