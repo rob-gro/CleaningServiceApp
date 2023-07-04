@@ -1,5 +1,7 @@
-TRUNCATE clients;
+ALTER TABLE houses
+DROP CONSTRAINT FK5tsdkcf1lxtwgx8lw30jsux4y;
 TRUNCATE houses;
+TRUNCATE clients;
 INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (1, 'bsoughton0@toplist.cz', 'Blisse', 'Soughton', '635 105 7680');
 INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (2, 'llarcher1@dyndns.org', 'Leodora', 'Larcher', '227 759 6856');
 INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (3, 'wbrinkworth2@topsy.com', 'Walther', 'Brinkworth', '150 518 7695');
