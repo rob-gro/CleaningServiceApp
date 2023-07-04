@@ -1,0 +1,11 @@
+INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (1, 'bsoughton0@toplist.cz', 'Blisse', 'Soughton', '635 105 7680');
+INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (2, 'llarcher1@dyndns.org', 'Leodora', 'Larcher', '227 759 6856');
+INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (3, 'wbrinkworth2@topsy.com', 'Walther', 'Brinkworth', '150 518 7695');
+INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (4, 'avirgin3@vistaprint.com', 'Ammamaria', 'Virgin', '217 855 8434');
+INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (5, 'ykerwen4@cyberchimps.com', 'Yettie', 'Kerwen', '745 368 0151');
+INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (6, 'kdarcy5@who.int', 'Kacey', 'd''Arcy', '874 428 4836');
+INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (7, 'bfawdrie6@surveymonkey.com', 'Beck', 'Fawdrie', '155 331 4303');
+INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (8, 'tdemichetti7@php.net', 'Thomas', 'De Michetti', '825 304 7834');
+INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (9, 'smacloughlin8@cyberchimps.com', 'Silva', 'MacLoughlin', '819 835 7480');
+INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (10, 'mwalder9@loc.gov', 'Meyer', 'Walder', '760 287 7277');
+INSERT INTO clients (id, email, first_name, last_name, phone) VALUES (11, 'rob@gro.dev', 'Robert', 'Grodzki', '123 456 789');
