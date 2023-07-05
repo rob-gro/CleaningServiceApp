@@ -18,7 +18,7 @@ public class DatabaseCheckTask {
         this.dataLoader = dataLoader;
     }
 
-    @Scheduled(cron = "* */20 * * * *")
+    @Scheduled(cron = "* */30 * * * *")
     public void checkAndInsertMissingRecords() {
         long countClients = clientRepository.count();
         long countHouses = houseRepository.count();
