@@ -1,4 +1,3 @@
-
 SET FOREIGN_KEY_CHECKS = 0;
 ALTER TABLE houses DROP FOREIGN KEY FK5tsdkcf1lxtwgx8lw30jsux4y;
 TRUNCATE houses;

@@ -22,7 +22,7 @@ public class DatabaseCheckTask {
     public void checkAndInsertMissingRecords() {
         long countClients = clientRepository.count();
         long countHouses = houseRepository.count();
-        if ((countClients == 0) || (countHouses == 0)) {
+        if ((countClients == 0) || (countHouses == 0) || ((countClients == 0) && (countHouses == 0 ))) {
             dataLoader.loadInitialData();
         }
     }
