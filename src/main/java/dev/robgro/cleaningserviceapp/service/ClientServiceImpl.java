@@ -36,9 +36,7 @@ public class ClientServiceImpl implements ClientService {
 
     @Override
     public void deleteClientById(Long id) {
-
         Client client = getClientById(id);
-
         if (client != null) {
             List<House> clientHouses = client.getHouses();
             if (clientHouses != null) {

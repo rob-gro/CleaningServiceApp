@@ -37,7 +37,6 @@ public class HouseServiceImpl implements HouseService {
     @Override
     public void deleteHouseById(Long id) {
         House house = getHouseById(id);
-
         if (house != null) {
             Client houseClient = house.getClient();
             if (houseClient != null) {
