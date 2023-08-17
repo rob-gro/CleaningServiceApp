@@ -4,6 +4,7 @@ import dev.robgro.cleaningserviceapp.model.Client;
 import dev.robgro.cleaningserviceapp.model.House;
 import dev.robgro.cleaningserviceapp.repository.ClientRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -19,16 +20,19 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<Client> getAllClients() {
         return clientRepository.findAll();
     }
 
     @Override
+    @Transactional
     public Client saveClient(Client client) {
         return clientRepository.save(client);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public Client getClientById(Long id) {
         Optional<Client> clientOptional = clientRepository.findById(id);
         return clientOptional.orElseThrow(() -> new NoSuchElementException("Client not found with ID: " + id));

@@ -4,6 +4,7 @@ import dev.robgro.cleaningserviceapp.model.Client;
 import dev.robgro.cleaningserviceapp.model.House;
 import dev.robgro.cleaningserviceapp.repository.HouseRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -19,16 +20,19 @@ public class HouseServiceImpl implements HouseService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public List<House> getAllHouses() {
         return houseRepository.findAll();
     }
 
     @Override
+    @Transactional
       public House saveHouse(House house) {
         return houseRepository.save(house);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public House getHouseById(Long id) {
         Optional<House> houseOptional = houseRepository.findById(id);
         return houseOptional.orElseThrow(() -> new NoSuchElementException("House not found with ID: " + id));
@@ -47,11 +51,13 @@ public class HouseServiceImpl implements HouseService {
     }
 
     @Override
+    @Transactional
     public List<House> clientHousesList(Long clientId) {
         return houseRepository.findByClientId(clientId);
     }
 
     @Override
+    @Transactional
     public void removeClientFromHouse(Long id) {
         House house = getHouseById(id);
         if (house != null) {
